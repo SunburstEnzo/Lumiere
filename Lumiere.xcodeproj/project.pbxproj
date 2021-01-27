@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		175B5B3C25C1F9EE000CF7D4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */; };
 		175B5B3F25C1F9EE000CF7D4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B3D25C1F9EE000CF7D4 /* MainInterface.storyboard */; };
 		175B5B4325C1F9EE000CF7D4 /* LumiereShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		175B5B4C25C1FB0A000CF7D4 /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B4B25C1FB0A000CF7D4 /* SwiftagramCrypto */; };
+		175B5B4E25C1FB0A000CF7D4 /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B4D25C1FB0A000CF7D4 /* Swiftagram */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175B5B4C25C1FB0A000CF7D4 /* SwiftagramCrypto in Frameworks */,
+				175B5B4E25C1FB0A000CF7D4 /* Swiftagram in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +139,10 @@
 				175B5B4225C1F9EE000CF7D4 /* PBXTargetDependency */,
 			);
 			name = Lumiere;
+			packageProductDependencies = (
+				175B5B4B25C1FB0A000CF7D4 /* SwiftagramCrypto */,
+				175B5B4D25C1FB0A000CF7D4 /* Swiftagram */,
+			);
 			productName = Lumiere;
 			productReference = 175B5B1D25C1F9C7000CF7D4 /* Lumiere.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 175B5B1425C1F9C7000CF7D4;
+			packageReferences = (
+				175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */,
+			);
 			productRefGroup = 175B5B1E25C1F9C7000CF7D4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -495,6 +506,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sbertix/Swiftagram.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		175B5B4B25C1FB0A000CF7D4 /* SwiftagramCrypto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */;
+			productName = SwiftagramCrypto;
+		};
+		175B5B4D25C1FB0A000CF7D4 /* Swiftagram */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */;
+			productName = Swiftagram;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 175B5B1525C1F9C7000CF7D4 /* Project object */;
 }
