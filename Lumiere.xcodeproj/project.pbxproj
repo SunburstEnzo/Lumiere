@@ -13,7 +13,34 @@
 		175B5B2825C1F9C7000CF7D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B2625C1F9C7000CF7D4 /* Main.storyboard */; };
 		175B5B2A25C1F9C8000CF7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */; };
 		175B5B2D25C1F9C8000CF7D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B2B25C1F9C8000CF7D4 /* LaunchScreen.storyboard */; };
+		175B5B3C25C1F9EE000CF7D4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */; };
+		175B5B3F25C1F9EE000CF7D4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B3D25C1F9EE000CF7D4 /* MainInterface.storyboard */; };
+		175B5B4325C1F9EE000CF7D4 /* LumiereShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		175B5B4125C1F9EE000CF7D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 175B5B1525C1F9C7000CF7D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 175B5B3825C1F9EE000CF7D4;
+			remoteInfo = LumiereShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		175B5B4725C1F9EE000CF7D4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				175B5B4325C1F9EE000CF7D4 /* LumiereShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		175B5B1D25C1F9C7000CF7D4 /* Lumiere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumiere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +51,21 @@
 		175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		175B5B2C25C1F9C8000CF7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		175B5B2E25C1F9C8000CF7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LumiereShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		175B5B3E25C1F9EE000CF7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		175B5B4025C1F9EE000CF7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		175B5B1A25C1F9C7000CF7D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		175B5B3625C1F9EE000CF7D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				175B5B1F25C1F9C7000CF7D4 /* Lumiere */,
+				175B5B3A25C1F9EE000CF7D4 /* LumiereShare */,
 				175B5B1E25C1F9C7000CF7D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				175B5B1D25C1F9C7000CF7D4 /* Lumiere.app */,
+				175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +107,16 @@
 			path = Lumiere;
 			sourceTree = "<group>";
 		};
+		175B5B3A25C1F9EE000CF7D4 /* LumiereShare */ = {
+			isa = PBXGroup;
+			children = (
+				175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */,
+				175B5B3D25C1F9EE000CF7D4 /* MainInterface.storyboard */,
+				175B5B4025C1F9EE000CF7D4 /* Info.plist */,
+			);
+			path = LumiereShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +127,34 @@
 				175B5B1925C1F9C7000CF7D4 /* Sources */,
 				175B5B1A25C1F9C7000CF7D4 /* Frameworks */,
 				175B5B1B25C1F9C7000CF7D4 /* Resources */,
+				175B5B4725C1F9EE000CF7D4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				175B5B4225C1F9EE000CF7D4 /* PBXTargetDependency */,
 			);
 			name = Lumiere;
 			productName = Lumiere;
 			productReference = 175B5B1D25C1F9C7000CF7D4 /* Lumiere.app */;
 			productType = "com.apple.product-type.application";
+		};
+		175B5B3825C1F9EE000CF7D4 /* LumiereShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 175B5B4425C1F9EE000CF7D4 /* Build configuration list for PBXNativeTarget "LumiereShare" */;
+			buildPhases = (
+				175B5B3525C1F9EE000CF7D4 /* Sources */,
+				175B5B3625C1F9EE000CF7D4 /* Frameworks */,
+				175B5B3725C1F9EE000CF7D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumiereShare;
+			productName = LumiereShare;
+			productReference = 175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,6 +166,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					175B5B1C25C1F9C7000CF7D4 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					175B5B3825C1F9EE000CF7D4 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -115,6 +187,7 @@
 			projectRoot = "";
 			targets = (
 				175B5B1C25C1F9C7000CF7D4 /* Lumiere */,
+				175B5B3825C1F9EE000CF7D4 /* LumiereShare */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +200,14 @@
 				175B5B2D25C1F9C8000CF7D4 /* LaunchScreen.storyboard in Resources */,
 				175B5B2A25C1F9C8000CF7D4 /* Assets.xcassets in Resources */,
 				175B5B2825C1F9C7000CF7D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		175B5B3725C1F9EE000CF7D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				175B5B3F25C1F9EE000CF7D4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +224,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		175B5B3525C1F9EE000CF7D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				175B5B3C25C1F9EE000CF7D4 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		175B5B4225C1F9EE000CF7D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 175B5B3825C1F9EE000CF7D4 /* LumiereShare */;
+			targetProxy = 175B5B4125C1F9EE000CF7D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		175B5B2625C1F9C7000CF7D4 /* Main.storyboard */ = {
@@ -160,6 +257,14 @@
 				175B5B2C25C1F9C8000CF7D4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		175B5B3D25C1F9EE000CF7D4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				175B5B3E25C1F9EE000CF7D4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,6 +389,7 @@
 		175B5B3225C1F9C8000CF7D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +409,7 @@
 		175B5B3325C1F9C8000CF7D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +421,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aledsamuel.Lumiere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		175B5B4525C1F9EE000CF7D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T85MH6Z7M5;
+				INFOPLIST_FILE = LumiereShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aledsamuel.Lumiere.LumiereShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		175B5B4625C1F9EE000CF7D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T85MH6Z7M5;
+				INFOPLIST_FILE = LumiereShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aledsamuel.Lumiere.LumiereShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,6 +481,15 @@
 			buildConfigurations = (
 				175B5B3225C1F9C8000CF7D4 /* Debug */,
 				175B5B3325C1F9C8000CF7D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		175B5B4425C1F9EE000CF7D4 /* Build configuration list for PBXNativeTarget "LumiereShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				175B5B4525C1F9EE000CF7D4 /* Debug */,
+				175B5B4625C1F9EE000CF7D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
