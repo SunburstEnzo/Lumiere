@@ -19,6 +19,16 @@
 		175B5B4C25C1FB0A000CF7D4 /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B4B25C1FB0A000CF7D4 /* SwiftagramCrypto */; };
 		175B5B4E25C1FB0A000CF7D4 /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B4D25C1FB0A000CF7D4 /* Swiftagram */; };
 		175B5B5325C1FBCB000CF7D4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B5225C1FBCB000CF7D4 /* SDWebImage */; };
+		175B5B8425C1FF75000CF7D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B8325C1FF75000CF7D4 /* LoginViewController.swift */; };
+		175B5B8825C1FFA2000CF7D4 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B8725C1FFA2000CF7D4 /* MediaViewController.swift */; };
+		175B5B8D25C1FFBD000CF7D4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B8C25C1FFBD000CF7D4 /* SDWebImage */; };
+		175B5B8F25C1FFC1000CF7D4 /* Swiftagram in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B8E25C1FFC1000CF7D4 /* Swiftagram */; };
+		175B5B9125C1FFC5000CF7D4 /* SwiftagramCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 175B5B9025C1FFC5000CF7D4 /* SwiftagramCrypto */; };
+		175B5B9625C1FFE1000CF7D4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B9525C1FFE1000CF7D4 /* NavigationController.swift */; };
+		175B5B9C25C1FFF5000CF7D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B9B25C1FFF5000CF7D4 /* Extensions.swift */; };
+		175B5B9F25C1FFFF000CF7D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B9B25C1FFF5000CF7D4 /* Extensions.swift */; };
+		175B5BA225C20001000CF7D4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B9525C1FFE1000CF7D4 /* NavigationController.swift */; };
+		175B5BA525C200E3000CF7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,12 @@
 		175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		175B5B3E25C1F9EE000CF7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		175B5B4025C1F9EE000CF7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175B5B8325C1FF75000CF7D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		175B5B8725C1FFA2000CF7D4 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		175B5B9525C1FFE1000CF7D4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		175B5B9B25C1FFF5000CF7D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		175B5BA825C20114000CF7D4 /* Lumiere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lumiere.entitlements; sourceTree = "<group>"; };
+		175B5BAB25C20121000CF7D4 /* LumiereShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumiereShare.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175B5B8D25C1FFBD000CF7D4 /* SDWebImage in Frameworks */,
+				175B5B8F25C1FFC1000CF7D4 /* Swiftagram in Frameworks */,
+				175B5B9125C1FFC5000CF7D4 /* SwiftagramCrypto in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +106,7 @@
 				175B5B1F25C1F9C7000CF7D4 /* Lumiere */,
 				175B5B3A25C1F9EE000CF7D4 /* LumiereShare */,
 				175B5B1E25C1F9C7000CF7D4 /* Products */,
+				175B5B8B25C1FFBD000CF7D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +122,12 @@
 		175B5B1F25C1F9C7000CF7D4 /* Lumiere */ = {
 			isa = PBXGroup;
 			children = (
+				175B5BA825C20114000CF7D4 /* Lumiere.entitlements */,
 				175B5B2025C1F9C7000CF7D4 /* AppDelegate.swift */,
 				175B5B2225C1F9C7000CF7D4 /* SceneDelegate.swift */,
+				175B5B8325C1FF75000CF7D4 /* LoginViewController.swift */,
 				175B5B2425C1F9C7000CF7D4 /* ViewController.swift */,
+				175B5B9425C1FFD1000CF7D4 /* Shared */,
 				175B5B2625C1F9C7000CF7D4 /* Main.storyboard */,
 				175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */,
 				175B5B2B25C1F9C8000CF7D4 /* LaunchScreen.storyboard */,
@@ -116,11 +139,29 @@
 		175B5B3A25C1F9EE000CF7D4 /* LumiereShare */ = {
 			isa = PBXGroup;
 			children = (
+				175B5BAB25C20121000CF7D4 /* LumiereShare.entitlements */,
 				175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */,
+				175B5B8725C1FFA2000CF7D4 /* MediaViewController.swift */,
 				175B5B3D25C1F9EE000CF7D4 /* MainInterface.storyboard */,
 				175B5B4025C1F9EE000CF7D4 /* Info.plist */,
 			);
 			path = LumiereShare;
+			sourceTree = "<group>";
+		};
+		175B5B8B25C1FFBD000CF7D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		175B5B9425C1FFD1000CF7D4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				175B5B9525C1FFE1000CF7D4 /* NavigationController.swift */,
+				175B5B9B25C1FFF5000CF7D4 /* Extensions.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +204,11 @@
 			dependencies = (
 			);
 			name = LumiereShare;
+			packageProductDependencies = (
+				175B5B8C25C1FFBD000CF7D4 /* SDWebImage */,
+				175B5B8E25C1FFC1000CF7D4 /* Swiftagram */,
+				175B5B9025C1FFC5000CF7D4 /* SwiftagramCrypto */,
+			);
 			productName = LumiereShare;
 			productReference = 175B5B3925C1F9EE000CF7D4 /* LumiereShare.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -222,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175B5BA525C200E3000CF7D4 /* Assets.xcassets in Resources */,
 				175B5B3F25C1F9EE000CF7D4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175B5B8425C1FF75000CF7D4 /* LoginViewController.swift in Sources */,
+				175B5B9C25C1FFF5000CF7D4 /* Extensions.swift in Sources */,
 				175B5B2525C1F9C7000CF7D4 /* ViewController.swift in Sources */,
+				175B5B9625C1FFE1000CF7D4 /* NavigationController.swift in Sources */,
 				175B5B2125C1F9C7000CF7D4 /* AppDelegate.swift in Sources */,
 				175B5B2325C1F9C7000CF7D4 /* SceneDelegate.swift in Sources */,
 			);
@@ -244,6 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				175B5B3C25C1F9EE000CF7D4 /* ShareViewController.swift in Sources */,
+				175B5BA225C20001000CF7D4 /* NavigationController.swift in Sources */,
+				175B5B9F25C1FFFF000CF7D4 /* Extensions.swift in Sources */,
+				175B5B8825C1FFA2000CF7D4 /* MediaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +460,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lumiere/Lumiere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T85MH6Z7M5;
 				INFOPLIST_FILE = Lumiere/Info.plist;
@@ -427,6 +481,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lumiere/Lumiere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T85MH6Z7M5;
 				INFOPLIST_FILE = Lumiere/Info.plist;
@@ -444,6 +499,7 @@
 		175B5B4525C1F9EE000CF7D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumiereShare/LumiereShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T85MH6Z7M5;
 				INFOPLIST_FILE = LumiereShare/Info.plist;
@@ -463,6 +519,7 @@
 		175B5B4625C1F9EE000CF7D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumiereShare/LumiereShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T85MH6Z7M5;
 				INFOPLIST_FILE = LumiereShare/Info.plist;
@@ -545,6 +602,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 175B5B5125C1FBCB000CF7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		175B5B8C25C1FFBD000CF7D4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175B5B5125C1FBCB000CF7D4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		175B5B8E25C1FFC1000CF7D4 /* Swiftagram */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */;
+			productName = Swiftagram;
+		};
+		175B5B9025C1FFC5000CF7D4 /* SwiftagramCrypto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175B5B4A25C1FB0A000CF7D4 /* XCRemoteSwiftPackageReference "Swiftagram" */;
+			productName = SwiftagramCrypto;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
