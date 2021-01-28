@@ -373,6 +373,10 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
 				let actionSheet = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
 				actionSheet.view.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "GradientImage"))
 				
+				actionSheet.modalPresentationStyle = .popover
+				actionSheet.popoverPresentationController?.sourceView = galleryCollectionView
+				actionSheet.popoverPresentationController?.sourceRect = CGRect(x: galleryCollectionView.bounds.width.half, y: galleryCollectionView.bounds.height.half, width: 0, height: 0) //galleryCollectionView.bounds
+				
 				for image in images {
 					
 					let title = NSLocalizedString("Save Image", comment: "") + " (\(image.width) ✕ \(image.height))"

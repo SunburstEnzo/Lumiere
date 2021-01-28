@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1710B95F25C313AD0052343D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */; };
+		1733863E25C34D860060370F /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B3B25C1F9EE000CF7D4 /* ShareViewController.swift */; };
 		175B5B2125C1F9C7000CF7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B2025C1F9C7000CF7D4 /* AppDelegate.swift */; };
 		175B5B2325C1F9C7000CF7D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B2225C1F9C7000CF7D4 /* SceneDelegate.swift */; };
 		175B5B2525C1F9C7000CF7D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B2425C1F9C7000CF7D4 /* ViewController.swift */; };
@@ -292,7 +292,7 @@
 				175B5B2525C1F9C7000CF7D4 /* ViewController.swift in Sources */,
 				175B5B9625C1FFE1000CF7D4 /* NavigationController.swift in Sources */,
 				175B5B2125C1F9C7000CF7D4 /* AppDelegate.swift in Sources */,
-				1710B95F25C313AD0052343D /* ShareViewController.swift in Sources */,
+				1733863E25C34D860060370F /* ShareViewController.swift in Sources */,
 				175B5B2325C1F9C7000CF7D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

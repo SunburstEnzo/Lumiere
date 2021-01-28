@@ -42,22 +42,7 @@ final class ShareViewController: UIViewController {
 //		return ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first
 //	}
 	
-	private var url: URL?
-	
-	
-	// MARK: Init
-	
-	init(url: URL?) {
-		
-		self.url = url
-		
-		super.init(nibName: nil, bundle: nil)
-	}
-	
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) is not supported")
-	}
+	var url: URL?
 	
 	
 	// MARK: View lifecycle

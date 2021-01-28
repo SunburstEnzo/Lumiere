@@ -33,8 +33,7 @@ Tap the share button when viewing an Instagram post in the app or in Safari on i
 * Full iPad support
 * History
 * Bulk downloads
-* Save to a “Lumiere” photo album 
-* lumiere://
+* Save to a “Lumiere” photo album
 * SwiftUI rewrite
 
 

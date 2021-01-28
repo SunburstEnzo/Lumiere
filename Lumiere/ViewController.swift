@@ -110,28 +110,6 @@ final class ViewController: UIViewController {
 	}
 	
 	
-	private func instagramDeepLinkFromHTTPLink(_ link: String) -> String? {
-		
-		/// Swift code written by SamB at https://stackoverflow.com/a/50788526/1241153
-		
-		guard let linkURL = URL(string: link) else { return nil }
-		
-		let shortcode = linkURL.lastPathComponent
-		
-		let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-		var mediaId = 0
-		
-		for char in shortcode {
-			
-			guard let index = alphabet.firstIndex(of: char) else { continue }
-			
-			mediaId = (mediaId * 64) + index.utf16Offset(in: alphabet)
-		}
-		
-		return String(mediaId)
-	}
-	
-	
 	// MARK: Handlers
 	
 	@IBAction func handlePasteClipboardAction(_ sender: UIButton) {
@@ -147,14 +125,14 @@ final class ViewController: UIViewController {
 		guard let text = sender.text,
 			  let url = URL(string: text) else { return }
 		
-		let shareViewController = ShareViewController(url: url)
-		present(NavigationController(rootViewController: shareViewController), animated: true, completion: nil)
+		findMediaID(with: url)
 	}
 	
 	
 	func findMediaID(with url: URL) {
 		
-		let shareViewController = ShareViewController(url: url)
+		let shareViewController = ShareViewController()
+		shareViewController.url = url
 		present(NavigationController(rootViewController: shareViewController), animated: true, completion: nil)
 	}
 	
