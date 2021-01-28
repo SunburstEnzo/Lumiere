@@ -4,7 +4,7 @@
 <img src="Lumiere/Resources/LumiereAppIconRounded.png">
 </p>
 
-> An iOS app share extension for saving Instagram post media. 
+> An iOS app with share extension for saving Instagram post media. 
 
 Tap the share button when viewing an Instagram post in the app or in Safari on iOS, and select “Lumiere” to view the share sheet in app. 
 
@@ -19,7 +19,7 @@ Tap the share button when viewing an Instagram post in the app or in Safari on i
 ## How To Install
 1. Use your own Apple Developer account to sign the app and its share extension (note: uses Keychain sharing).
 1. Open the main Lumiere app and sign into Instagram with your personal account.
-1. Visit an Instagram link and tap the share button.
+1. Visit an Instagram link and tap the share button, or copy and paste a link into the app.
 
 
 ## Dependencies
@@ -28,7 +28,6 @@ Tap the share button when viewing an Instagram post in the app or in Safari on i
 
 
 ## Future Plans
-* More than just the share sheet—major app improvements
 * Support for more than just posts (e.g. user profile browsing, stories)
 * Full iPad support
 * History
