@@ -1,10 +1,10 @@
 # Lumiere (iOS)
 
-<p align="center">
-<img src="Lumiere/Resources/LumiereAppIconRounded.png">
-</p>
-
 > An iOS app with share extension for saving Instagram post media. 
+
+<p align="center">
+<img src="Lumiere/Resources/LumiereAppIconRounded.png" width="100" height="100">
+</p>
 
 Tap the share button when viewing an Instagram post in the app or in Safari on iOS, and select “Lumiere” to view the share sheet in app. 
 
