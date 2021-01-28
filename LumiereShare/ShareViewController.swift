@@ -42,6 +42,23 @@ final class ShareViewController: UIViewController {
 //		return ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first
 //	}
 	
+	private var url: URL?
+	
+	
+	// MARK: Init
+	
+	init(url: URL?) {
+		
+		self.url = url
+		
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) is not supported")
+	}
+	
 	
 	// MARK: View lifecycle
 	
@@ -68,46 +85,53 @@ final class ShareViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		guard let userInfo = extensionContext?.inputItems as? [NSExtensionItem],
-			  !userInfo.isEmpty else {
+		if let url = url {
 			
-			return loadingDidEnd(with: "Failed to get URL")
+			findInstagramContent(using: url)
 		}
-		
-		for item in userInfo {
+		else {
 			
-			if let itemProviders = item.attachments {
+			guard let userInfo = extensionContext?.inputItems as? [NSExtensionItem],
+				  !userInfo.isEmpty else {
 				
-				for itemProvider in itemProviders {
+				return loadingDidEnd(with: "Failed to get URL")
+			}
+			
+			for item in userInfo {
+				
+				if let itemProviders = item.attachments {
 					
-					if itemProvider.hasItemConformingToTypeIdentifier("public.url") {
+					for itemProvider in itemProviders {
 						
-						itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil) { [weak self] (item, error) in
+						if itemProvider.hasItemConformingToTypeIdentifier("public.url") {
 							
-							guard let publicURL = item as? URL else {
+							itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil) { [weak self] (item, error) in
 								
-								self?.loadingDidEnd(with: "public.url not a URL")
-								return
-							}
-							
-							if let error = error {
+								guard let publicURL = item as? URL else {
+									
+									self?.loadingDidEnd(with: "public.url not a URL")
+									return
+								}
 								
-								self?.loadingDidEnd(with: error.localizedDescription)
-								return
+								if let error = error {
+									
+									self?.loadingDidEnd(with: error.localizedDescription)
+									return
+								}
+								
+								self?.findInstagramContent(using: publicURL)
 							}
+						}
+						else {
 							
-							self?.findInstagramContent(using: publicURL)
+							loadingDidEnd(with: "public.url not found")
 						}
 					}
-					else {
-						
-						loadingDidEnd(with: "public.url not found")
-					}
 				}
-			}
-			else {
-				
-				loadingDidEnd(with: "Invalid inputItems")
+				else {
+					
+					loadingDidEnd(with: "Invalid inputItems")
+				}
 			}
 		}
 	}
@@ -134,7 +158,7 @@ final class ShareViewController: UIViewController {
 		
 		guard absoluteString != "" else { return loadingDidEnd(with: "Empty URL") }
 		
-		if absoluteString.contains("/p/") {
+		if absoluteString.contains("/p/") || absoluteString.contains("/reel/") || absoluteString.contains("/tv/") {
 			
 			/// Media post
 			
@@ -202,6 +226,13 @@ final class ShareViewController: UIViewController {
 	
 	@objc private func handleDismissButton(_ sender: UIBarButtonItem) {
 		
-		extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+		if let extensionContext = extensionContext {
+			
+			extensionContext.completeRequest(returningItems: nil, completionHandler: nil)
+		}
+		else {
+			
+			dismiss(animated: true, completion: nil)
+		}
 	}
 }

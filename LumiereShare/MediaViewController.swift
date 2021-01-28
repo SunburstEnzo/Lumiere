@@ -155,7 +155,14 @@ final class MediaViewController: UIViewController {
 	
 	@objc private func handleDismissButton(_ sender: UIBarButtonItem) {
 		
-		extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+		if let extensionContext = extensionContext {
+			
+			extensionContext.completeRequest(returningItems: nil, completionHandler: nil)
+		}
+		else {
+			
+			dismiss(animated: true, completion: nil)
+		}
 	}
 	
 	
@@ -242,8 +249,6 @@ final class MediaViewController: UIViewController {
 						
 						self?.instagramMedia = InstagramMedia(caption: caption, mediaType: mediaType, imageVersions: imageVersions, videoURLs: videoURLs)
 					}
-					
-					break
 					
 				case .failure(let error):
 					
@@ -409,7 +414,7 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
 			if success {
 				
 				alertString = NSLocalizedString("Success!", comment: "")
-				messageString = "Image saved successfully"
+				messageString = NSLocalizedString("Image saved successfully", comment: "")
 				
 			} else {
 				

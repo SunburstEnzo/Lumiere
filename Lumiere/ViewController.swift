@@ -16,7 +16,19 @@ import Swiftagram
 final class ViewController: UIViewController {
 	
 	
-	private var secret: Secret?
+	@IBOutlet weak var pasteClipboardButton: UIButton!
+	
+	@IBOutlet weak var textField: UITextField!
+	
+	@IBOutlet weak var searchButton: UIButton!
+	
+	private var secret: Secret? {
+		
+		didSet {
+			
+			navigationItem.rightBarButtonItem?.menu = createMoreMenu()
+		}
+	}
 	
 	private var currentUser: User?
 	
@@ -26,7 +38,25 @@ final class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		title = "Lumiere"
 		
+		view.backgroundColor = .systemBackground
+		
+		navigationController?.navigationBar.prefersLargeTitles = true
+		
+		let moreButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis.circle"), primaryAction: nil, menu: createMoreMenu())
+		navigationItem.rightBarButtonItem = moreButton
+		
+		textField.addTarget(self, action: #selector(handleTextFieldReturn(_:)), for: .editingDidEndOnExit)
+		
+		pasteClipboardButton.setTitleColor(UIColor.systemBlue.withAlphaComponent(0.8), for: .normal)
+		
+		searchButton.setTitleColor(.systemBackground, for: .normal)
+		searchButton.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "GradientImage"))
+		searchButton.layer.cornerRadius = 6
+		
+		let backgroundTap = UITapGestureRecognizer(target: self, action: #selector(handleBackgroundTap(_:)))
+		view.addGestureRecognizer(backgroundTap)
 	}
 	
 	
@@ -37,65 +67,33 @@ final class ViewController: UIViewController {
 	}
 	
 	
+	// MARK: Instagram
+	
 	private func findUser() {
 		
 		if let secret = KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first {
 			
 			self.secret = secret
 			
-			self.currentUser = UserDefaults.standard
-				.data(forKey: secret.identifier)
-				.flatMap { try? JSONDecoder().decode(User.self, from: $0) }
+			print("Secret found: \(self.secret != nil)")
 			
-			guard let link = instagramDeepLinkFromHTTPLink("CKg54_Ch4HE") else { return }
-			
-			Endpoint.Media.summary(for: link)
+			Endpoint.User.summary(for: secret.identifier)
 				.unlocking(with: secret)
-				.task { (result) in
+				.task { [weak self] (result) in
 					
 					switch result {
-					case .success(let media):
+					case .success(let user):
 						
-						if let content = media.media?.first?.content {
-							
-							switch content {
-							case .picture(let picture):
-								
-								if let url = picture.images?.first?.url {
-									
-									print(url)
-								}
-								
-							case .album(let album):
-								
-								for item in album {
-									
-									switch item {
-									case .picture(let picture):
-										
-										if let url = picture.images?.first?.url {
-											
-											print(url)
-										}
-										
-									default:
-										break
-									}
-								}
-								
-							default:
-								break
-							}
-						}
+						self?.currentUser = user.user
 						
-						break
+						print("User found: \(self?.currentUser != nil)")
 						
 					case .failure(let error):
 						
-						print(error.localizedDescription)
+						print("Failed to find user, error: \(error.localizedDescription)")
 					}
-				}
-				.resume()
+					
+				}.resume()
 		}
 		else {
 			
@@ -131,5 +129,98 @@ final class ViewController: UIViewController {
 		}
 		
 		return String(mediaId)
+	}
+	
+	
+	// MARK: Handlers
+	
+	@IBAction func handlePasteClipboardAction(_ sender: UIButton) {
+		
+		textField.text = UIPasteboard.general.string
+	}
+	
+	
+	@objc private func handleTextFieldReturn(_ sender: UITextField) {
+		
+		textField.resignFirstResponder()
+		
+		guard let text = sender.text,
+			  let url = URL(string: text) else { return }
+		
+		let shareViewController = ShareViewController(url: url)
+		present(NavigationController(rootViewController: shareViewController), animated: true, completion: nil)
+	}
+	
+	
+	@IBAction func handleSearchButton(_ sender: UIButton) {
+		
+		handleTextFieldReturn(textField)
+	}
+	
+	
+	@objc private func handleBackgroundTap(_ sender: UIGestureRecognizer) {
+		
+		textField.resignFirstResponder()
+	}
+	
+	
+	private func createMoreMenu() -> UIMenu {
+		 
+		let aboutAction = UIAction(title: NSLocalizedString("About", comment: ""), image: UIImage(systemName: "info.circle")) { [weak self] _ in
+			
+			/// About
+			
+			let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "N/A"
+			let buildString = (Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "N/A")
+			
+			let message = versionString + " (" + buildString + ")"
+			
+			let alert = UIAlertController(title: NSLocalizedString("About", comment: ""), message: message, preferredStyle: .alert)
+			
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			
+			self?.present(alert, animated: true, completion: nil)
+		}
+		
+		let clearCacheAction = UIAction(title: NSLocalizedString("Clear Cache", comment: ""), image: UIImage(systemName: "trash")) { [weak self] _ in
+			
+			/// Empty Cache
+			
+			SDImageCache.shared.clearMemory()
+			SDImageCache.shared.clearDisk { [weak self] in
+				
+				let alert = UIAlertController(title: NSLocalizedString("Image Cache Cleared", comment: ""), message: nil, preferredStyle: .alert)
+				
+				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				
+				self?.present(alert, animated: true, completion: nil)
+			}
+		}
+		
+		let accountAction: UIAction
+		
+		if secret == nil {
+			
+			accountAction = UIAction(title: NSLocalizedString("Sign In", comment: ""), image: UIImage(systemName: "person.badge.plus")) { [weak self] _ in
+				
+				/// Sign In
+				
+				self?.findUser()
+			}
+		}
+		else {
+			
+			accountAction = UIAction(title: NSLocalizedString("Sign Out", comment: ""), image: UIImage(systemName: "person.badge.minus")) { [weak self] _ in
+				
+				/// Sign Out
+				
+				KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").removeAll()
+				
+				self?.currentUser = nil
+				self?.secret = nil
+			}
+		}
+		
+		return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [aboutAction, clearCacheAction, accountAction])
 	}
 }
