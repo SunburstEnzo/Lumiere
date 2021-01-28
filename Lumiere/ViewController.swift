@@ -152,6 +152,13 @@ final class ViewController: UIViewController {
 	}
 	
 	
+	func findMediaID(with url: URL) {
+		
+		let shareViewController = ShareViewController(url: url)
+		present(NavigationController(rootViewController: shareViewController), animated: true, completion: nil)
+	}
+	
+	
 	@IBAction func handleSearchButton(_ sender: UIButton) {
 		
 		handleTextFieldReturn(textField)
