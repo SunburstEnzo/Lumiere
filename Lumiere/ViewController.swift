@@ -32,6 +32,8 @@ final class ViewController: UIViewController {
 	
 	private var currentUser: User?
 	
+	private var cacheSize: UInt = 0
+	
 	
 	// MARK: View lifecycle
 	
@@ -62,6 +64,8 @@ final class ViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		
+		updateCacheSize()
 		
 		findUser()
 	}
@@ -158,16 +162,20 @@ final class ViewController: UIViewController {
 			let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "N/A"
 			let buildString = (Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "N/A")
 			
-			let message = versionString + " (" + buildString + ")"
+			let message = "Lumiere " + versionString + " (" + buildString + ")"
 			
 			let alert = UIAlertController(title: NSLocalizedString("About", comment: ""), message: message, preferredStyle: .alert)
+			alert.view.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "GradientImage"))
 			
 			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 			
 			self?.present(alert, animated: true, completion: nil)
 		}
 		
-		let clearCacheAction = UIAction(title: NSLocalizedString("Clear Cache", comment: ""), image: UIImage(systemName: "trash")) { [weak self] _ in
+		
+		let sizeString = Utils.shared.byteCountFormatter.string(for: cacheSize) ?? "N/A"
+		
+		let clearCacheAction = UIAction(title: NSLocalizedString("Clear Cache", comment: "") + " (\(sizeString))", image: UIImage(systemName: "trash")) { [weak self] _ in
 			
 			/// Empty Cache
 			
@@ -175,10 +183,13 @@ final class ViewController: UIViewController {
 			SDImageCache.shared.clearDisk { [weak self] in
 				
 				let alert = UIAlertController(title: NSLocalizedString("Image Cache Cleared", comment: ""), message: nil, preferredStyle: .alert)
+				alert.view.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "GradientImage"))
 				
 				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				
 				self?.present(alert, animated: true, completion: nil)
+				
+				self?.updateCacheSize()
 			}
 		}
 		
@@ -207,5 +218,11 @@ final class ViewController: UIViewController {
 		}
 		
 		return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [aboutAction, clearCacheAction, accountAction])
+	}
+	
+	
+	private func updateCacheSize() {
+		
+		cacheSize = SDImageCache.shared.totalDiskSize()
 	}
 }

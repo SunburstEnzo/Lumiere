@@ -31,6 +31,7 @@
 		175B5BA225C20001000CF7D4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B9525C1FFE1000CF7D4 /* NavigationController.swift */; };
 		175B5BA525C200E3000CF7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */; };
 		175B5BB025C20804000CF7D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 175B5BAF25C20804000CF7D4 /* README.md */; };
+		17769D6025C745E20073353D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17769D5F25C745E20073353D /* Utils.swift */; };
 		17A924A725C3040900C570BA /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175B5B8725C1FFA2000CF7D4 /* MediaViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		175B5BA825C20114000CF7D4 /* Lumiere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lumiere.entitlements; sourceTree = "<group>"; };
 		175B5BAB25C20121000CF7D4 /* LumiereShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumiereShare.entitlements; sourceTree = "<group>"; };
 		175B5BAF25C20804000CF7D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		17769D5F25C745E20073353D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				175B5B2225C1F9C7000CF7D4 /* SceneDelegate.swift */,
 				175B5B8325C1FF75000CF7D4 /* LoginViewController.swift */,
 				175B5B2425C1F9C7000CF7D4 /* ViewController.swift */,
+				17769D5F25C745E20073353D /* Utils.swift */,
 				175B5B9425C1FFD1000CF7D4 /* Shared */,
 				175B5B2625C1F9C7000CF7D4 /* Main.storyboard */,
 				175B5B2925C1F9C8000CF7D4 /* Assets.xcassets */,
@@ -288,6 +291,7 @@
 			files = (
 				175B5B8425C1FF75000CF7D4 /* LoginViewController.swift in Sources */,
 				17A924A725C3040900C570BA /* MediaViewController.swift in Sources */,
+				17769D6025C745E20073353D /* Utils.swift in Sources */,
 				175B5B9C25C1FFF5000CF7D4 /* Extensions.swift in Sources */,
 				175B5B2525C1F9C7000CF7D4 /* ViewController.swift in Sources */,
 				175B5B9625C1FFE1000CF7D4 /* NavigationController.swift in Sources */,

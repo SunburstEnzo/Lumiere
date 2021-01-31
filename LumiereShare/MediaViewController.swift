@@ -155,6 +155,12 @@ final class MediaViewController: UIViewController {
 	
 	@objc private func handleDismissButton(_ sender: UIBarButtonItem) {
 		
+		dismissCurrent()
+	}
+	
+	
+	private func dismissCurrent() {
+		
 		if let extensionContext = extensionContext {
 			
 			extensionContext.completeRequest(returningItems: nil, completionHandler: nil)
@@ -168,7 +174,7 @@ final class MediaViewController: UIViewController {
 	
 	private func updateInstagramMedia() {
 		
-		title = instagramMedia?.caption
+		title = instagramMedia?.caption ?? "Lumiere"
 		
 		galleryCollectionView.reloadData()
 		
@@ -186,7 +192,14 @@ final class MediaViewController: UIViewController {
 				switch result {
 				case .success(let media):
 					
-					let caption = media.media?.first?.caption?.text
+					if let mediaError = media.error {
+						
+						self?.presentMediaFailure(with: mediaError)
+						
+						self?.updateInstagramMedia()
+					}
+					
+					let caption = media.media?.first?.caption?.text ?? "Lumiere"
 					
 					if let content = media.media?.first?.content {
 						
@@ -517,6 +530,39 @@ extension MediaViewController: UICollectionViewDataSource, UICollectionViewDeleg
 		let alert = UIAlertController(title: alertString, message: errorMessage, preferredStyle: .alert)
 		
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		
+		DispatchQueue.main.async { [weak self] in
+			
+			self?.present(alert, animated: true, completion: nil)
+		}
+	}
+	
+	
+	private func presentMediaFailure(with mediaError: ResponseError) {
+		
+		let alertString = NSLocalizedString("Media Error", comment: "")
+		
+		let errorMessage: String?
+		
+		switch mediaError {
+		case .generic(let message): errorMessage = message
+		case .unforseen(let message):
+			
+			if let message = message { errorMessage = message }
+			else { fallthrough }
+			
+		case .unknown: errorMessage = NSLocalizedString("Unknown error", comment: "")
+		}
+		
+		let alert = UIAlertController(title: alertString, message: errorMessage, preferredStyle: .alert)
+		alert.view.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "GradientImage"))
+		
+		let closeAction = UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: .default) { [weak self] _ in
+			
+			self?.dismissCurrent()
+		}
+		
+		alert.addAction(closeAction)
 		
 		DispatchQueue.main.async { [weak self] in
 			
