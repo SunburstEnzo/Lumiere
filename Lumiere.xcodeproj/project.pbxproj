@@ -474,6 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lumiere/Lumiere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4ES7L6LB2N;
 				INFOPLIST_FILE = Lumiere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
@@ -496,6 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lumiere/Lumiere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4ES7L6LB2N;
 				INFOPLIST_FILE = Lumiere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
@@ -515,6 +517,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LumiereShare/LumiereShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4ES7L6LB2N;
 				INFOPLIST_FILE = LumiereShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
@@ -536,6 +539,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LumiereShare/LumiereShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4ES7L6LB2N;
 				INFOPLIST_FILE = LumiereShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
