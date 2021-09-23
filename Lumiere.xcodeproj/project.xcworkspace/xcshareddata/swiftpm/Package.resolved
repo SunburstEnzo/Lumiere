@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "4aaca57fb2f6dc5554a2228cf1d94289bd0a6c7d",
-          "version": "5.10.3"
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/sbertix/Swiftchain.git",
         "state": {
           "branch": null,
-          "revision": "dff136ab54df5768c1b8a234bc7c6fd212b280f7",
-          "version": "1.0.4"
+          "revision": "ab0409e62f1629bc1a153f41dec5856a3c05a548",
+          "version": "1.0.5"
         }
       }
     ]

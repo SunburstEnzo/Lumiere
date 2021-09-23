@@ -75,7 +75,7 @@ final class ViewController: UIViewController {
 	
 	private func findUser() {
 		
-		if let secret = KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first {
+		if let secret = KeychainStorage<Secret>(service: "com.aledsamuel.lumiereapp").all().first {
 			
 			self.secret = secret
 			
@@ -210,7 +210,7 @@ final class ViewController: UIViewController {
 				
 				/// Sign Out
 				
-				KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").removeAll()
+				KeychainStorage<Secret>(service: "com.aledsamuel.lumiereapp").removeAll()
 				
 				self?.currentUser = nil
 				self?.secret = nil

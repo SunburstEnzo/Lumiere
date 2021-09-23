@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		WebViewAuthenticator(storage: KeychainStorage<Secret>(service: "com.aledsamuel.lumiere")) {
+		WebViewAuthenticator(storage: KeychainStorage<Secret>(service: "com.aledsamuel.lumiereapp")) {
 			
 			self.webView = $0
 			

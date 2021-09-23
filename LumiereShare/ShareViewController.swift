@@ -39,7 +39,7 @@ final class ShareViewController: UIViewController {
 	
 //	private static var secret: Secret? {
 //
-//		return ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first
+//		return ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiereapp").all().first
 //	}
 	
 	var url: URL?
@@ -57,7 +57,7 @@ final class ShareViewController: UIViewController {
 		let closeButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(handleDismissButton(_:)))
 		navigationItem.rightBarButtonItem = closeButton
 		
-		secret = ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiere").all().first
+		secret = ComposableRequestCrypto.KeychainStorage<Secret>(service: "com.aledsamuel.lumiereapp").all().first
 		
 		activityIndicator.startAnimating()
 		view.addSubview(activityIndicator)
